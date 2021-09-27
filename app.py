@@ -273,27 +273,22 @@ def side_remote_controller(cls):
 
     @widget_management(remove_current_page=True)
     def _click_logOutButton(self=None):
-        """질문 게시판 클릭 시"""
         return startPage()
 
     @widget_management(remove_current_page=remove_current_page)
     def _click_inquireButton(self=None):
-        """질문 게시판 클릭 시"""
         return side_remote_controller(inquire())
 
     @widget_management(remove_current_page=remove_current_page)
     def _click_noticeButton(self=None):
-        """질문 게시판 클릭 시"""
         return side_remote_controller(notice())
 
     @widget_management(remove_current_page=remove_current_page)
     def _click_communicationButton(self=None):
-        """질문 게시판 클릭 시"""
         return side_remote_controller(communicationBoard())
 
     @widget_management(remove_current_page=remove_current_page)
     def _click_talkingButton(self=None):
-        """질문 게시판 클릭 시"""
         return side_remote_controller(talkingRoom())
 
     cls.log_out.clicked.connect(partial(_click_logOutButton,cls))
