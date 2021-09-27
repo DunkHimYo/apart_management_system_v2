@@ -43,7 +43,7 @@ class connect_DB:
             return select_data
 
     def _chking_id_pw(self, id, pw):
-        """ID/PW Select DB Setting"""
+        """chking ID/PW"""
         try:
             self.cur.execute(f'SELECT pw FROM amsdb.dweller where ID="{id}";')
         except:
@@ -57,7 +57,7 @@ class connect_DB:
                 return False
 
     def _click_question(self, questionNumber, title, contents):
-        """회원가입 DB Setting"""
+        """질문 사항 전송"""
         try:
             self.cur.execute(f'INSERT INTO question VALUES("{questionNumber}","{title}","{contents}")')
         except pymysql.err.IntegrityError:
@@ -68,7 +68,7 @@ class connect_DB:
             return True
 
     def _click_inquire(self, id, boardNumber, title,contents):
-        """회원가입 DB Setting"""
+        """요청 사항 """
         print(f'INSERT INTO inquire VALUES({boardNumber},"{id}","{title}")')
         try:
             self.cur.execute(f'INSERT INTO inquire VALUES({boardNumber},"{id}","{title}")')
